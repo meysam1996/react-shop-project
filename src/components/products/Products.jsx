@@ -1,12 +1,15 @@
 import React from 'react'
 import Product from './Product'
+import "./Products.css"
 
-const Products = () => {
+const Products = ({productsData}) => {
   return (
-    <div>
-        <h2>Products</h2>
-        <hr />
-        <Product />
+    <div className='products'>
+      {
+        productsData.map((productItem) =>
+          <Product key={productItem.id} product={productItem} />
+        )
+      }
     </div>
   )
 }
