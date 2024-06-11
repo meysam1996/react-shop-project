@@ -6,6 +6,7 @@
     border-radius: 5%;
     padding: 10px;
     box-shadow: rgba(90, 90, 90, 0.2) 0px 2px 8px 0px;
+    transition: 0.2s;
 }
 .product-card:hover {
     box-shadow: rgba(66, 66, 66, 0.3) 0px 2px 8px 0px;
