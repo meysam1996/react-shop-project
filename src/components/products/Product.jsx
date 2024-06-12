@@ -20,7 +20,9 @@ const Product = ({ product }) => {
 
   return (
     <div className="product-card">
-      <img className="product-card-img" src={product.image} alt={product.id} />
+      <div className="product-img-frame">
+        <img className="product-card-img" src={product.image} alt={product.id} />
+      </div>
       <div className="product-card-body">
         <h3>Name : <p className="product-name">{product.title}</p></h3>
         <h3>Price : <span className="product-price">{product.price}</span></h3>
