@@ -4,6 +4,7 @@ import Products from './components/products/Products'
 import Footer from './components/footer/Footer'
 import axios from 'axios'
 import Spinner from './components/spinner/Spinner'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
 
