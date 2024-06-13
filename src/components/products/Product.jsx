@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast, Flip } from 'react-toastify';
 
 import "./Product.css";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const [count, setCount] = useState(0);
@@ -36,11 +37,13 @@ const Product = ({ product }) => {
     <React.Fragment>
       <div className="product-card">
         <div className="product-img-frame">
-          <img
-            className="product-card-img"
-            src={product.image}
-            alt={product.id}
-          />
+          <Link to={`/product/${product.id}`}>
+            <img
+              className="product-card-img"
+              src={product.image}
+              alt={product.id}
+            />
+          </Link>
         </div>
         <div className="product-card-body">
           <h3>
