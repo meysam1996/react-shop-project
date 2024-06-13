@@ -1,0 +1,13 @@
+.product-details-container {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: row;
+}
+
+.product-details-left {
+    max-width: 50%;
+}
+
+.product-detail-group {
+    /* empty */
+}
