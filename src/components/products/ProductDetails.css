@@ -6,8 +6,34 @@
 
 .product-details-left {
     max-width: 50%;
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.product-details-left > img {
+    height: 70%;
+    width: 70%;
+}
+
+.product-details-right {
+    padding: 3rem;
+    width: 600px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: fit-content;
+    margin-top: 4rem;
+    margin-left: 5rem;
 }
 
 .product-detail-group {
-    /* empty */
+    padding: 0.5rem 0;
+}
+
+.product-detail-group > h4{
+    color: gray;
+}
+
+.product-detail-group > h2 {
+    padding: 0.5rem 0;
 }
