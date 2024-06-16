@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import Product from "./pages/Product";
 import About from "./pages/About";
+import ShoppingCart from "./pages/ShoppingCart";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about" element={<About />} />
+          <Route path="shopping-cart" element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
       <Footer />
