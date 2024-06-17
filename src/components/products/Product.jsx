@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { ToastContainer, toast, Flip } from 'react-toastify';
-
+import "react-toastify/dist/ReactToastify.css";
+import { FaShoppingBasket } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 import "./Product.css";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
 
-  const increaseCount = () => {
-    let currentCount = parseInt(count);
-    currentCount += 1;
-    setCount(currentCount);
-  };
+  const addToCart = () => {
 
-  const decreaseCount = () => {
-    let currentCount = parseInt(count);
-    if (currentCount > 0) {
-      currentCount -= 1;
-      setCount(currentCount);
-    } else {
-      toast.error("You cann't decrease any more!", {
+    const objectData = {
+      type: "ADD_PRODUCT",
+      payload: product
+    };
+    setTimeout(() => {
+      dispatch(objectData);
+    }, 1000);
+
+    setTimeout(() => {
+      toast.success("Add product in cart!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -30,7 +31,8 @@ const Product = ({ product }) => {
         theme: "light",
         transition: Flip,
         });
-    }
+    }, 2000)
+    console.log("Add product in cart!");
   };
 
   return (
@@ -54,9 +56,7 @@ const Product = ({ product }) => {
           </h3>
         </div>
         <div className="product-card-footer">
-          <button onClick={decreaseCount}>-</button>
-          <h3>{count}</h3>
-          <button onClick={increaseCount}>+</button>
+          <button className="button-16" onClick={addToCart}>Add to cart <FaShoppingBasket /></button>
         </div>
       </div>
       <ToastContainer />
