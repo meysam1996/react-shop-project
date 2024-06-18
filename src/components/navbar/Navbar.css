@@ -15,6 +15,7 @@
     flex-direction: row;
     list-style: none;
     align-items: center;
+    width: 100%;
 }
 
 .navbar ul li {

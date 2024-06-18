@@ -33,11 +33,19 @@
     margin-top: 20px;
     width: 100%;
 }
+
+/* Card body product headers */
+.product-card .product-card-body h3 {
+    font-size: large;
+    color: gray;
+}
 /* Card body product name */
 .product-card .product-card-body .product-name {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    font-size: large;
+    color: #202124;
 }
 
 .product-card .product-card-body .product-price {
