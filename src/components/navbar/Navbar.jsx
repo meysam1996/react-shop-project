@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <ul>
+      <ul className='px-5'>
         <li><Link to="/">My Online Shop</Link></li>
         <li><Link to="/about">About Us</Link></li>
         <li style={{marginLeft: "auto"}}><Link to="/shopping-cart"><FaShoppingCart /></Link></li>
