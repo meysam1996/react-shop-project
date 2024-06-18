@@ -45,6 +45,10 @@ export const shoppingCartReducer = (state = initialState, action) => {
       const filteredArray = state.filter((product) => product.id !== action.payload.id);
       return filteredArray;
 
+
+    case "RESET_CART":
+      return initialState;
+      
     default:
       return state;
   }

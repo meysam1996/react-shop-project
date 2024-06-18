@@ -49,11 +49,31 @@ const ShoppingCartDetails = () => {
 
 	}
 
+	const removeAllProducts = () => {
+		const objectReset = {
+			type: "RESET_CART"
+		}
+		dispatch(objectReset);
+
+		toast.success(`Delete all products from cart!`, {
+			position: "top-right",
+			autoClose: 1000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "light",
+			transition: Flip,
+			});
+	} 
+
   return (
     <div className='cart-container container align-items-start'>
 			<div className='row w-100'>
-				<div className='h3 pb-2 mb-4 border-bottom border-black'>
-					ShoppingCartDetails
+				<div className='d-flex justify-content-between pb-2 mb-4 border-bottom border-black'>
+					<h3>ShoppingCartDetails</h3>
+					<button onClick={() => removeAllProducts()} className='btn btn-outline-danger btn-sm'>Delete All</button>
 				</div>
 				<div className='border border-1 rounded-3 h-auto p-0'>
 					<table className="table table-hover">
