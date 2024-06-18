@@ -41,6 +41,10 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
       return tempArray;
 
+    case "REMOVE_PRODUCT_CART":
+      const filteredArray = state.filter((product) => product.id !== action.payload.id);
+      return filteredArray;
+
     default:
       return state;
   }

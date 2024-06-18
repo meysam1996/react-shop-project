@@ -2,6 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import "./ShoppingCartDetails.css"
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { CiCircleRemove } from 'react-icons/ci';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const ShoppingCartDetails = () => {
@@ -23,6 +26,27 @@ const ShoppingCartDetails = () => {
 			payload: product
 		}
 		dispatch(objectData);
+	}
+
+	const removeProductFromCart = (product) => {
+		const objectData = {
+			type: "REMOVE_PRODUCT_CART",
+			payload: product
+		}
+		dispatch(objectData);
+
+		toast.success(`Delete product ${product.id} from cart!`, {
+			position: "top-right",
+			autoClose: 1000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "light",
+			transition: Flip,
+			});
+
 	}
 
   return (
@@ -49,8 +73,9 @@ const ShoppingCartDetails = () => {
 											<td>{product.title}</td>
 											<td>{product.count}</td>
 											<td>
-												<button onClick={() => increaseProductCount(product)} className='btn btn-outline-success btn-sm me-1'><FaPlus /></button>
-												<button onClick={() => decreaseProductCount(product)} className='btn btn-outline-danger btn-sm ms-1'><FaMinus /></button>
+												<button onClick={() => increaseProductCount(product)} className='btn btn-outline-primary btn-sm me-1'><FaPlus /></button>
+												<button onClick={() => decreaseProductCount(product)} className='btn btn-outline-warning btn-sm me-1'><FaMinus /></button>
+												<button onClick={() => removeProductFromCart(product)} className='btn btn-outline-danger btn-sm p-0 border-0 me-1'><CiCircleRemove className='fs-3' /></button>
 											</td>
 									</tr> 
 								))
@@ -59,6 +84,7 @@ const ShoppingCartDetails = () => {
 					</table>
 				</div>
 			</div>
+			<ToastContainer />
 		</div>
   )
 }

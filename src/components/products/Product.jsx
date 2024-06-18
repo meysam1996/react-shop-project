@@ -32,7 +32,6 @@ const Product = ({ product }) => {
         transition: Flip,
         });
     }, 2000)
-    console.log("Add product in cart!");
   };
 
   return (
